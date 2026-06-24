@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Poorvaja & Nithin | Wedding Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+--lavender:#cdb9e8;
+--beige:#f5efe6;
+--ivory:#fcfaf7;
+--gold:#a98b5e;
+--text:#4f4a45;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Poppins,sans-serif;background:var(--ivory);color:var(--text);line-height:1.7}
+.hero{
+min-height:100vh;display:flex;flex-direction:column;justify-content:center;
+align-items:center;text-align:center;padding:2rem;
+background:linear-gradient(rgba(252,250,247,.92),rgba(252,250,247,.92)),#f8f4ef;
+}
+h1{font-family:"Playfair Display",serif;font-size:4rem;color:var(--gold);margin-bottom:.5rem}
+.subtitle{font-size:1.2rem;max-width:700px}
+.date{margin-top:1.5rem;font-size:1.1rem}
+.countdown{margin-top:2rem;font-size:1.3rem;color:var(--gold);font-weight:600}
+.section{
+max-width:900px;margin:auto;padding:5rem 1.5rem;
+}
+.card{
+background:white;border-radius:20px;padding:2rem;margin:1.5rem 0;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+border-top:5px solid var(--lavender);
+}
+h2{
+font-family:"Playfair Display",serif;
+color:var(--gold);
+text-align:center;
+margin-bottom:2rem;
+font-size:2.2rem;
+}
+h3{
+font-family:"Playfair Display",serif;
+margin-bottom:.5rem;
+}
+.center{text-align:center}
+.badge{
+display:inline-block;
+background:#fff7d6;
+padding:.4rem .8rem;
+border-radius:999px;
+margin-top:.75rem;
+}
+.button{
+display:inline-block;
+padding:12px 24px;
+background:var(--gold);
+color:white;
+text-decoration:none;
+border-radius:999px;
+margin-top:1rem;
+}
+footer{
+text-align:center;
+padding:4rem 1rem;
+background:var(--beige);
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+<div style="font-size:3rem">❦</div>
+<h1>Poorvaja & Nithin</h1>
+<p class="subtitle">Together with their families, invite you to celebrate their wedding festivities.</p>
+<div class="date">1 – 3 July 2026 • Chennai</div>
+<div id="countdown" class="countdown"></div>
+</section>
+
+<section class="section">
+<h2>Our Celebration</h2>
+
+<div class="card">
+<h3>Haldi & Mehendi</h3>
+<p><strong>1 July 2026</strong></p>
+<p>Haldi Ceremony: 10:00 AM – 12:00 Noon</p>
+<p>Lunch: 1:00 PM</p>
+<p>Mehendi Celebration: Following Lunch</p>
+<p>A simple gathering with our closest friends and family as we begin our wedding celebrations together.</p>
+<div class="badge">Dress Code: Yellow</div>
+</div>
+
+<div class="card">
+<h3>Pradhanam</h3>
+<p><strong>2 July 2026</strong></p>
+<p>5:00 PM onwards</p>
+<p>Venue: Umiya Mahal, Chennai</p>
+<a class="button" href="https://maps.app.goo.gl/3WEXnupBsSoMQDMm8?g_st=ac" target="_blank">View Venue</a>
+</div>
+
+<div class="card">
+<h3>Wedding Ceremony</h3>
+<p><strong>3 July 2026</strong></p>
+<p>Muhurtham: 10:05 AM</p>
+<p>Venue: Umiya Mahal, Chennai</p>
+<a class="button" href="https://maps.app.goo.gl/3WEXnupBsSoMQDMm8?g_st=ac" target="_blank">View Venue</a>
+</div>
+</section>
+
+<footer>
+<h3>We look forward to celebrating with you.</h3>
+<p>With love,</p>
+<p><strong>Poorvaja & Nithin</strong></p>
+<p>Chennai • July 2026</p>
+</footer>
+
+<script>
+const weddingDate = new Date("July 3, 2026 10:05:00").getTime();
+const timer = document.getElementById("countdown");
+
+function updateCountdown(){
+const now = new Date().getTime();
+const diff = weddingDate - now;
+
+if(diff <= 0){
+timer.innerHTML = "The Wedding Day Has Arrived!";
+return;
+}
+const d = Math.floor(diff/(1000*60*60*24));
+const h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+const m = Math.floor((diff%(1000*60*60))/(1000*60));
+timer.innerHTML = `${d} Days • ${h} Hours • ${m} Minutes to the Wedding`;
+}
+updateCountdown();
+setInterval(updateCountdown,60000);
+</script>
+
+</body>
+</html>
